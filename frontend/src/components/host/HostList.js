@@ -7,7 +7,7 @@ import { RiRefreshLine } from 'react-icons/ri';
 class HostList extends Component {
     constructor(props) {
             super(props);
-            this.state = {hosts: []};
+            this.state = {hosts: [],};
             this.remove = this.remove.bind(this);
     }
     componentDidMount() {
@@ -48,7 +48,6 @@ class HostList extends Component {
                 'Content-Type': 'application/json'
             }
         }).then(response => response.json())
-//        console.log("DELETING IS STARTED")
         dbDeviceList.filter(
             dbDevice => !currentDeviceList.includes(dbDevice)
         ).forEach(
@@ -62,7 +61,6 @@ class HostList extends Component {
                 })
             }
         )
-//        console.log("DELETING IS FINISHED")
         await fetch('/devices', {
             method: 'POST',
             headers: {
